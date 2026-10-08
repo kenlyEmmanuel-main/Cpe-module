@@ -1,0 +1,62 @@
+% !TEX root = ../main.tex
+\chapter{Laboratory Safety Protocols}
+
+\section{Electrical Hazards \& Human Physiology}
+Electronics laboratory environments present personnel with hazardous voltages, arc flash hazards, thermal sources, toxic chemical vapors during soldering, and sensitive electrostatic discharge (ESD) risks. Compliance with occupational health and safety standards \cite{yildiz2010approach, bicol_university_safety} is essential to maintain a zero-injury environment.
+
+\subsection{Current vs. Voltage: Physiological Impact}
+A primary tenet of electrical safety is that \textbf{electric current}, rather than voltage alone, determines physiological trauma. The human body behaves as an electrolytic volume conductor whose internal impedance varies drastically depending on tissue hydration, contact surface area, and skin moisture.
+
+These physiological thresholds were empirically quantified through the landmark biomedical research of Professor Charles F. Dalziel at the University of California, Berkeley \cite{dalziel1968lethal}. Dalziel's extensive experimental trials on human sensory perception and muscular tetany established the definitive criteria for current tolerance across commercial power frequencies ($50\text{--}60\text{ Hz}$). His findings subsequently served as the foundational basis for international regulatory standards, including the International Electrotechnical Commission Technical Report \textbf{IEC TR 60479-1} \cite{iec60479_1}, \textbf{OSHA Publication 3075} (\textit{Controlling Electrical Hazards}) \cite{osha3075}, and \textbf{IEEE Standard 80} \cite{ieee80}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Physiological Effects of 60 Hz Alternating Current on the Human Body}
+    \label{tab:shock_thresholds}
+    \begin{tabularx}{\textwidth}{p{2.8cm} p{4.2cm} X}
+        \toprule
+        \textbf{Current Level} & \textbf{Threshold Name} & \textbf{Physiological Reaction} \\
+        \midrule
+        $1\text{ mA}$ ($0.001\text{ A}$) & Perception Threshold & Faint tingling sensation at contact point; generally harmless. \\
+        $10\text{ mA}$ ($0.010\text{ A}$) & ``Let-Go'' Threshold & Involuntary muscle contraction; motor control lost; victim cannot release energized conductor. \\
+        $20\text{--}30\text{ mA}$ & Respiratory Paralysis & Severe thoracic muscle tetany; breathing arrests; rapid asphyxiation if loop is sustained. \\
+        $\ge 100\text{ mA}$ ($0.1\text{ A}$) & Ventricular Fibrillation & Uncoordinated cardiac twitching; blood circulation ceases; fatal within seconds if not defibrillated. \\
+        \midrule
+        \multicolumn{3}{l}{\footnotesize\textit{Sources: Dalziel \& Lee (IEEE) \cite{dalziel1968lethal}, IEC TR 60479-1 \cite{iec60479_1}, and OSHA Pub.~3075 \cite{osha3075}.}} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+\subsection{Body Resistance \& Environmental Variables}
+Intact, calloused dry skin offers a resistance between $100\text{ k}\Omega$ and $500\text{ k}\Omega$. However, when skin is broken, punctured, or saturated with perspiration, skin resistance collapses below $1\text{ k}\Omega$. Under wet conditions, voltages as low as \textbf{50 V} can deliver lethal currents exceeding $50\text{ mA}$ across the chest. Furthermore, high-voltage test equipment (such as cathode ray tubes or inductive supplies) can exceed $10{,}000\text{ V}$, making liquid spills an immediate life hazard.
+
+\begin{safetybox}
+\textbf{CRITICAL SAFETY RULES FOR THE BENCH:}
+\begin{itemize}[leftmargin=1.2em]
+    \item \textbf{Remove All Conductive Jewelry:} Metallic rings, bracelets, watches, and chains drastically lower skin contact resistance and can cause severe flash burns or direct shock paths.
+    \item \textbf{The ``One-Hand Rule'':} When probing circuits with potentially dangerous potentials, keep your non-dominant hand in a pocket or behind your back. This prevents forming a closed circuit loop across both arms through the thoracic cavity and heart.
+    \item \textbf{No Food or Beverages:} Drinks near workbenches are strictly prohibited to prevent conductive fluid spills into energized test instruments.
+    \item \textbf{Verify Zero Potential:} Treat all circuits as energized until de-energizing and physically verifying zero potential with a calibrated Digital Multimeter (DMM).
+\end{itemize}
+\end{safetybox}
+
+\section{Facility Safety, Grounding, \& Fire Protection}
+Workstations must utilize three-prong grounded power distribution equipped with Ground Fault Circuit Interrupters (GFCIs) or isolation transformers for AC power line equipment. Workstations must maintain clear access to:
+\begin{itemize}[leftmargin=1.5em]
+    \item Emergency master power disconnect shutoffs.
+    \item Class C or Class ABC dry chemical/CO$_2$ fire extinguishers rated for energized electrical equipment. Never apply water to an electrical fire.
+    \item Standard first aid stations and eye-wash facilities.
+\end{itemize}
+
+\section{Electrostatic Discharge (ESD) Prevention}
+Friction from clothing and walking across polymer flooring can generate static charges exceeding \textbf{5,000 V}. Human sensory perception detects static discharges only above 3,500--4,000 V, yet fragile semiconductor junction gates (especially MOSFETs) can suffer dielectric breakdown from pulses as low as 20--50 V.
+
+Technicians must wear grounded anti-static wrist straps incorporating a minimum $500\text{ k}\Omega$ (standard $1\text{ M}\Omega$) safety series resistor. This resistor safely drains electrostatic accumulation to earth ground while providing adequate impedance to limit current to safe sub-milliampere levels in case the operator touches an energized mains conductor.
+
+\section{Workbench Housekeeping \& Shutdown Protocol}
+At the end of every laboratory session, technicians must transition the bench into ``Secure Mode'':
+\begin{enumerate}[leftmargin=1.5em]
+    \item Power down all signal generators, oscilloscopes, and DC power supplies.
+    \item Reset variable voltage and current knobs to zero.
+    \item Clean and tin soldering iron tips, confirm irons are seated in insulated stands, and turn off iron mains power.
+    \item Return passive components to sorted bin cabinets and store leads and tools in labeled drawers.
+\end{enumerate}
