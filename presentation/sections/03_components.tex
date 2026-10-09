@@ -61,6 +61,33 @@
     \end{columns}
 \end{frame}
 
+\begin{frame}{Electrical Impedance ($Z$): Resistance in AC Circuits}
+    \begin{columns}[T]
+        \begin{column}{0.48\textwidth}
+            \textbf{Complex Impedance Definition}
+            $$Z = R + jX = |Z|\angle\theta$$
+            \begin{itemize}
+                \item \textbf{Impedance ($Z$):} Generalized opposition to alternating current, incorporating both magnitude and phase shift.
+                \item \textbf{Resistance ($R$):} Real component; irreversible power dissipation as heat ($P = I^2 R$).
+                \item \textbf{Reactance ($X$):} Imaginary component; reversible energy storage in electric or magnetic fields.
+                \item Magnitude: $|Z| = \sqrt{R^2 + X^2}$.
+                \item Phase Angle: $\theta = \arctan(X/R)$.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \textbf{Frequency-Dependent Reactances ($\omega = 2\pi f$)}
+            \begin{itemize}
+                \item \textbf{Capacitive Reactance ($X_C$):}
+                $$X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C} \implies Z_C = -j\frac{1}{\omega C}$$
+                Decreases as frequency rises. \textit{Blocks DC ($f=0$), passes high-frequency AC.}
+                \item \textbf{Inductive Reactance ($X_L$):}
+                $$X_L = \omega L = 2\pi f L \implies Z_L = j\omega L$$
+                Increases as frequency rises. \textit{Passes DC ($f=0$), chokes high-frequency AC.}
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
 \begin{frame}{Semiconductor Diodes \& Cathode Band Identification}
     \begin{columns}[c]
         \begin{column}{0.5\textwidth}

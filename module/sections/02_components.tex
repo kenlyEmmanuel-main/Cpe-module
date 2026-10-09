@@ -158,6 +158,55 @@ where $L$ is inductance measured in Henries (H). Inductors resist abrupt changes
     \caption{Standard schematic diagram symbols for inductors with air, iron, and ferrite cores.}
     \label{fig:inductor_symbols}
 \end{figure}
+\section{Electrical Impedance and AC Circuit Dynamics}
+While direct-current (DC) analysis evaluates circuits strictly through ohmic resistance ($R$), alternating-current (AC) signals introduce dynamic electromagnetic and electrostatic behaviors. The generalized opposition that an electrical network presents to the flow of sinusoidal alternating current is known as \textbf{electrical impedance} ($Z$).
+
+Impedance is expressed mathematically as a complex number in rectangular and polar forms:
+\begin{equation}
+    Z = R + jX = |Z|\angle\theta
+\end{equation}
+where $j = \sqrt{-1}$ is the imaginary unit, and:
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Resistance ($R$):} The real part of impedance, measured in ohms ($\Omega$). It represents the irreversible dissipation of electrical energy into thermal heat ($P = I_{\text{rms}}^2 R$), occurring independently of signal frequency in ideal components.
+    \item \textbf{Reactance ($X$):} The imaginary part of impedance, measured in ohms ($\Omega$). It represents the reversible storage and release of energy within electric fields (capacitive reactance, $X_C$) or magnetic fields (inductive reactance, $X_L$). Unlike resistance, reactance is strictly frequency-dependent.
+    \item \textbf{Impedance Magnitude ($|Z|$):} The ratio of peak voltage to peak current:
+    \begin{equation}
+        |Z| = \sqrt{R^2 + X^2}
+    \end{equation}
+    \item \textbf{Phase Angle ($\theta$):} The temporal phase shift between voltage and current waveforms:
+    \begin{equation}
+        \theta = \arctan\left(\frac{X}{R}\right)
+    \end{equation}
+\end{itemize}
+
+\subsection{Capacitive Reactance (\texorpdfstring{$X_C$}{X\_C})}
+A capacitor opposes changes in voltage by accumulating electrostatic charge on its conductive plates. When subjected to a sinusoidal voltage with angular frequency $\omega = 2\pi f$, its complex impedance is given by:
+\begin{equation}
+    Z_C = \frac{1}{j\omega C} = -j\frac{1}{\omega C} = -j X_C
+\end{equation}
+where capacitive reactance is:
+\begin{equation}
+    X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C}
+\end{equation}
+At zero frequency (DC, $f = 0$), $X_C \to \infty$, causing the capacitor to behave as an open circuit (blocking DC bias). As frequency increases, $X_C \to 0$, causing the capacitor to behave as an AC short circuit. This inverse frequency relationship forms the foundation of power supply decoupling, where capacitors shunt high-frequency transient noise to ground while preserving DC rails. In a pure capacitor, current leads voltage by $90^\circ$ ($\pi/2\text{ rad}$).
+
+\subsection{Inductive Reactance (\texorpdfstring{$X_L$}{X\_L})}
+An inductor opposes changes in current through the self-induction of counter-electromotive force (Lenz's Law). When driven by an alternating current, its complex impedance is:
+\begin{equation}
+    Z_L = j\omega L = +j X_L
+\end{equation}
+where inductive reactance is:
+\begin{equation}
+    X_L = \omega L = 2\pi f L
+\end{equation}
+At zero frequency (DC, $f = 0$), $X_L = 0\,\Omega$, allowing direct current to pass through with zero theoretical opposition. As frequency increases, $X_L$ scales linearly, presenting massive impedance to high-frequency AC signals. This direct frequency scaling allows inductors to function as electromagnetic interference (EMI) chokes and low-pass filtering elements. In a pure inductor, voltage leads current by $90^\circ$ ($\pi/2\text{ rad}$).
+
+\subsection{Practical Engineering Applications of Impedance}
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Passive Frequency Filters:} Combining resistors with reactive elements produces frequency-selective networks, including RC/RL first-order low-pass filters (cut-off frequency $f_c = \frac{1}{2\pi RC}$) and high-pass filters used extensively in audio processing, sensor conditioning, and analog-to-digital converter (ADC) anti-aliasing.
+    \item \textbf{Impedance Matching \& Signal Integrity:} In high-speed digital communications and RF systems, circuit traces behave as transmission lines. When the load impedance does not match the source and line characteristic impedance (typically $50\,\Omega$ in RF and $100\,\Omega$ differential in USB/Ethernet), signal reflections occur, generating ringing, false logic triggers, and severe data degradation.
+\end{itemize}
+
 \section{Active Semiconductor Devices}
 
 \subsection{Diodes}
