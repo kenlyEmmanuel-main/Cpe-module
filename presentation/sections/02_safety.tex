@@ -1,0 +1,67 @@
+% !TEX root = ../presentation.tex
+
+\begin{frame}{The Physics of Electric Shock: Human Body as a Resistor}
+    \begin{columns}[T]
+        \begin{column}{0.52\textwidth}
+            \begin{block}{Ohm's Law Applied to Human Tissue}
+                $$I = \frac{V}{R_{\text{body}}}$$
+                \begin{itemize}
+                    \item Voltage alone does not kill; \textbf{current magnitude ($I$)} and pathway dictate lethality.
+                    \item \textbf{Dry Skin:} $R \approx 10{,}000\,\Omega \text{ to } 100{,}000\,\Omega$.
+                    \item \textbf{Wet/Perspiring Skin:} $R$ plummets to $\le 1{,}000\,\Omega$.
+                    \item At $1{,}000\,\Omega$, a common $50\,\text{V}$ line yields $50\,\text{mA}$---enough to trigger ventricular fibrillation.
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.44\textwidth}
+            \begin{alertblock}{The ``One-Hand Rule''}
+                \begin{itemize}
+                    \item Always keep \textbf{one hand in your pocket} or behind your back when probing live high-voltage test points.
+                    \item Prevents current from forming a cross-torso circuit through the heart (hand-to-hand pathway).
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Physiological Current Thresholds ($60\,\text{Hz}\text{ AC} / \text{DC}$)}
+    \begin{table}[htbp]
+        \small
+        \centering
+        \begin{tabularx}{\textwidth}{l p{4.2cm} X}
+            \toprule
+            \textbf{Current Level} & \textbf{Physiological Reaction} & \textbf{Clinical Hazard} \\
+            \midrule
+            $1\,\text{mA}$ & Perception Threshold & Faint tingling sensation; safe. \\
+            $5\,\text{mA}$ & Maximum Harmless Current & Involuntary jerk; potential secondary trauma. \\
+            $10\text{--}20\,\text{mA}$ & \textbf{``Let-Go'' Threshold} & Muscular paralysis; victim cannot release conductor. \\
+            $20\text{--}50\,\text{mA}$ & Respiratory Arrest & Chest muscles contract; suffocation within minutes. \\
+            $\ge 100\,\text{mA}$ & \textbf{Ventricular Fibrillation} & Heart quivers uncontrollably; fatal without immediate CPR/AED. \\
+            \bottomrule
+        \end{tabularx}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Workbench Safety, Housekeeping \& ESD Mitigation}
+    \begin{columns}[T]
+        \begin{column}{0.48\textwidth}
+            \begin{block}{Personal Protective Equipment (PPE)}
+                \begin{itemize}
+                    \item \textbf{ANSI Z87.1 Safety Glasses:} Mandatory during soldering and component lead clipping.
+                    \item \textbf{Zero Jewelry Policy:} Rings and metallic watchbands can short power rails, causing severe arc burns.
+                    \item \textbf{De-energized Prototyping:} Always cut power before inserting or pulling components.
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \begin{exampleblock}{Electrostatic Discharge (ESD) Standards}
+                \begin{itemize}
+                    \item Human perception threshold for ESD is $\approx 3{,}000\,\text{V}$.
+                    \item CMOS/MOSFET gates suffer punch-through breakdown at $<100\,\text{V}$.
+                    \item \textbf{Wrist Straps:} Must include a \textbf{$1\,\text{M}\Omega$ safety resistor} to protect user from mains faults.
+                    \item Handle ICs by packaging body, never exposed pins.
+                \end{itemize}
+            \end{exampleblock}
+        \end{column}
+    \end{columns}
+\end{frame}

@@ -1,0 +1,81 @@
+% !TEX root = presentation.tex
+\documentclass[aspectratio=169, 10pt]{beamer}
+
+% ------------------------------------------------------------------------------
+% Theme & Color Configuration (Ateneo Blue Palette)
+% ------------------------------------------------------------------------------
+\usetheme{Boadilla}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+% Custom Ateneo Color Definitions
+\definecolor{AteneoBlue}{RGB}{0, 51, 102}        % #003366 Dark Navy
+\definecolor{AteneoRoyal}{RGB}{0, 85, 165}       % #0055A5 Royal Blue
+\definecolor{AteneoGold}{RGB}{217, 155, 0}       % #D99B00 Golden Accent
+\definecolor{LightBlueBg}{RGB}{240, 244, 250}    % Soft slide block background
+\definecolor{AlertRed}{RGB}{180, 40, 40}         % Safety / Warning accent
+\definecolor{CardBorder}{RGB}{210, 220, 235}
+
+% Apply Theme Colors
+\setbeamercolor{structure}{fg=AteneoBlue}
+\setbeamercolor{title}{fg=white, bg=AteneoBlue}
+\setbeamercolor{frametitle}{fg=white, bg=AteneoBlue}
+\setbeamercolor{author in head/foot}{fg=white, bg=AteneoBlue}
+\setbeamercolor{title in head/foot}{fg=white, bg=AteneoRoyal}
+\setbeamercolor{date in head/foot}{fg=white, bg=AteneoBlue}
+\setbeamercolor{block title}{fg=white, bg=AteneoBlue}
+\setbeamercolor{block body}{fg=black, bg=LightBlueBg}
+\setbeamercolor{block title alerted}{fg=white, bg=AlertRed}
+\setbeamercolor{block body alerted}{fg=black, bg=LightBlueBg}
+\setbeamercolor{block title example}{fg=white, bg=AteneoRoyal}
+\setbeamercolor{block body example}{fg=black, bg=LightBlueBg}
+\setbeamercolor{item}{fg=AteneoRoyal}
+
+% Custom Footline with Frame Numbering
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+        \usebeamerfont{author in head/foot}Ateneo Computer Engineering Society
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.416666\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+        \usebeamerfont{title in head/foot}Electronics Workshop: Safety \& Components
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+        \usebeamerfont{date in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+    \end{beamercolorbox}}%
+    \vskip0pt%
+}
+
+% ------------------------------------------------------------------------------
+% Required Packages
+% ------------------------------------------------------------------------------
+\usepackage{booktabs}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc}
+
+% ------------------------------------------------------------------------------
+% Metadata
+% ------------------------------------------------------------------------------
+\title[Electronics Workshop Module]{\textbf{\Large Electronics Workshop Module}}
+\subtitle{\large Laboratory Safety Protocols \& Electronic Components}
+\author[Ateneo CoES]{\textbf{Ateneo Computer Engineering Society}}
+\institute[ADNU]{Department of Computer Engineering}
+\date{Academic Year 2026--2027}
+
+% ------------------------------------------------------------------------------
+% Document Content
+% ------------------------------------------------------------------------------
+\begin{document}
+
+\input{sections/01_title_overview.tex}
+\input{sections/02_safety.tex}
+\input{sections/03_components.tex}
+\input{sections/04_conclusion.tex}
+
+\end{document}

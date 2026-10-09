@@ -4,7 +4,8 @@
     "latex-workshop.latex.autoBuild.run": "onFileChange",
     "latex-workshop.latex.rootFile.useSubFile": true,
     "latex-workshop.latex.search.rootFiles.include": [
-        "module/main.tex"
+        "module/main.tex",
+        "presentation/presentation.tex"
     ],
     "latex-workshop.latex.recipes": [
         {
