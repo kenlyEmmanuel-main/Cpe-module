@@ -60,3 +60,30 @@ At the end of every laboratory session, technicians must transition the bench in
     \item Clean and tin soldering iron tips, confirm irons are seated in insulated stands, and turn off iron mains power.
     \item Return passive components to sorted bin cabinets and store leads and tools in labeled drawers.
 \end{enumerate}
+
+\section{Laboratory Power Tool Operation \& Mechanical Safety}
+Power tools commonly utilized in electronics laboratories---such as benchtop PCB drill presses, rotary cutting tools, and hot air rework stations---introduce severe mechanical and thermal hazards alongside electrical risks. Safe operation requires strict adherence to mechanical protocols:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Workpiece Clamping:} Never hold a printed circuit board or chassis enclosure by hand during drilling or cutting operations. The rotational torque of high-speed bits can snatch the workpiece, causing violent projectile ejection or deep lacerations. Workpieces must always be immobilized using a mechanical drill press vise or PCB fixture.
+    \item \textbf{Entanglement Prevention \& Dress Code:} Rotating spindles present an immediate entanglement hazard. Personnel must strictly observe a \textbf{zero-gloves rule} when operating drills and rotary tools, as fabric can become ensnared in spinning chucks. Long hair must be tied back securely, long sleeves rolled above the elbows, and lanyards, loose jewelry, and neckties removed prior to operating machinery.
+    \item \textbf{Particulate and Eye Protection:} Machining copper-clad FR4 (flame-retardant fiberglass epoxy) generates microscopic glass dust and sharp copper burrs. Operators must wear ANSI Z87.1-rated safety glasses with side shields and an N95 particulate respirator to prevent corneal abrasion and inhalation of toxic fiberglass particulates.
+    \item \textbf{Tool Maintenance \& Disconnection:} Always disconnect power from rotary tools and drill presses before changing drill bits, cutting discs, or sanding drums. Never leave an energized tool unattended on a workbench.
+\end{itemize}
+
+\section{PCB Etchant Chemical Safety: Storage, Neutralization \& Disposal}
+Wet chemical etching processes commonly employ acidic oxidizers such as Ferric Chloride ($\text{FeCl}_3$) or Ammonium/Sodium Persulfate to dissolve unwanted copper laminate. Because these solutions are highly corrosive and toxic, handling them demands strict compliance with occupational safety and environmental regulations:
+
+\subsection{Storage Protocols}
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Chemical Compatibility:} Ferric chloride and persulfate solutions must be stored strictly in acid-resistant, heavy-duty High-Density Polyethylene (HDPE), polypropylene, or fluoropolymer containers with hermetic seals. \textbf{Never store or mix etchants in metallic containers or sinks}, as the acid reacts vigorously with metals, generating corrosive fumes and risking container rupture.
+    \item \textbf{Environment and Segregation:} Store etchant bottles inside a dedicated, ventilated acid/corrosive chemical cabinet. Keep containers isolated from organic solvents, flammable materials, strong bases (which cause exothermic reactions), and direct ultraviolet sunlight.
+    \item \textbf{Container Labeling:} Every container must bear GHS-compliant hazardous labeling clearly stating the chemical name, concentration, preparation date, and specific hazard warnings (Corrosive, Environmental Hazard).
+\end{itemize}
+
+\subsection{Neutralization and Disposal Protocols}
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Strict Prohibition of Drain Disposal:} \textbf{Spent etchant solutions must NEVER be poured into domestic, commercial, or municipal plumbing.} Dissolved cupric ions ($\text{Cu}^{2+}$) are highly biocidal, permanently disrupt biological wastewater treatment facilities, and rapidly dissolve copper and steel drainage piping.
+    \item \textbf{Pre-Disposal Neutralization:} Before transfer, spent acidic etchant must be slowly neutralized by gradually adding a weak base such as Sodium Bicarbonate (baking soda, $\text{NaHCO}_3$) or Calcium Carbonate ($\text{CaCO}_3$) in a well-ventilated fume hood until carbon dioxide effervescence ceases ($\text{pH} \approx 7.0\text{--}8.0$). This reaction converts toxic soluble copper ions into insoluble copper carbonate/hydroxide precipitate.
+    \item \textbf{Collection and Institutional Hand-off:} Allow the precipitated copper sludge to settle. Decant the neutral liquid and collect the sludge in designated hazardous chemical waste carboys labeled ``Spent Copper Etchant Sludge''. Submit containers to the University Environmental Safety Office or a licensed hazardous chemical disposal contractor in full compliance with local environmental legislation (e.g., DENR standards).
+\end{itemize}
