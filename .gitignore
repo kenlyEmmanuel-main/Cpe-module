@@ -15,3 +15,6 @@
 
 # Scratch/test images
 module/figures/test_*
+
+# Reference styling files
+5p-2627s1.pdf
