@@ -2,51 +2,66 @@
 \documentclass[aspectratio=169, 10pt]{beamer}
 
 % ------------------------------------------------------------------------------
-% Theme & Color Configuration (Ateneo Blue Palette)
+% Monochrome Minimalist Theme (Modeled after Dr. Joel Reyes Noche's 5p-2627s1)
 % ------------------------------------------------------------------------------
-\usetheme{Boadilla}
+\usetheme{default}
 \usecolortheme{default}
+
+% Disable navigation symbols
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{blocks}[rounded][shadow=false]
 
-% Custom Ateneo Color Definitions
-\definecolor{AteneoBlue}{RGB}{0, 51, 102}        % #003366 Dark Navy
-\definecolor{AteneoRoyal}{RGB}{0, 85, 165}       % #0055A5 Royal Blue
-\definecolor{AteneoGold}{RGB}{217, 155, 0}       % #D99B00 Golden Accent
-\definecolor{LightBlueBg}{RGB}{240, 244, 250}    % Soft slide block background
-\definecolor{AlertRed}{RGB}{180, 40, 40}         % Safety / Warning accent
-\definecolor{CardBorder}{RGB}{210, 220, 235}
+% Pure Black & White Color Palette
+\setbeamercolor{normal text}{fg=black, bg=white}
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{frametitle}{fg=black, bg=white}
+\setbeamercolor{title}{fg=black, bg=white}
+\setbeamercolor{subtitle}{fg=black, bg=white}
+\setbeamercolor{author}{fg=black, bg=white}
+\setbeamercolor{institute}{fg=black, bg=white}
+\setbeamercolor{date}{fg=black, bg=white}
+\setbeamercolor{item}{fg=black}
+\setbeamercolor{subitem}{fg=black}
+\setbeamercolor{subsubitem}{fg=black}
 
-% Apply Theme Colors
-\setbeamercolor{structure}{fg=AteneoBlue}
-\setbeamercolor{title}{fg=white, bg=AteneoBlue}
-\setbeamercolor{frametitle}{fg=white, bg=AteneoBlue}
-\setbeamercolor{author in head/foot}{fg=white, bg=AteneoBlue}
-\setbeamercolor{title in head/foot}{fg=white, bg=AteneoRoyal}
-\setbeamercolor{date in head/foot}{fg=white, bg=AteneoBlue}
-\setbeamercolor{block title}{fg=white, bg=AteneoBlue}
-\setbeamercolor{block body}{fg=black, bg=LightBlueBg}
-\setbeamercolor{block title alerted}{fg=white, bg=AlertRed}
-\setbeamercolor{block body alerted}{fg=black, bg=LightBlueBg}
-\setbeamercolor{block title example}{fg=white, bg=AteneoRoyal}
-\setbeamercolor{block body example}{fg=black, bg=LightBlueBg}
-\setbeamercolor{item}{fg=AteneoRoyal}
+% Plain Uncolored Blocks
+\setbeamertemplate{blocks}[default]
+\setbeamercolor{block title}{fg=black, bg=white}
+\setbeamercolor{block body}{fg=black, bg=white}
+\setbeamercolor{block title alerted}{fg=black, bg=white}
+\setbeamercolor{block body alerted}{fg=black, bg=white}
+\setbeamercolor{block title example}{fg=black, bg=white}
+\setbeamercolor{block body example}{fg=black, bg=white}
 
-% Custom Footline with Frame Numbering
-\setbeamertemplate{footline}{
-    \leavevmode%
-    \hbox{%
-    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-        \usebeamerfont{author in head/foot}Ateneo Computer Engineering Society
-    \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=.416666\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
-        \usebeamerfont{title in head/foot}Electronics Workshop: Safety \& Components
-    \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
-        \usebeamerfont{date in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
-    \end{beamercolorbox}}%
-    \vskip0pt%
+% Frametitle styling: Clean unshaded bold black text
+\setbeamertemplate{frametitle}{
+    \vspace{0.15cm}
+    {\usebeamerfont{frametitle}\textbf{\insertframetitle}}
+    \vspace{0.05cm}
 }
+
+% Top Headline: [Short Title] [Section] ---------------- [Slide/Total] (Matching 5p-2627s1)
+\setbeamertemplate{headline}{
+    \leavevmode
+    \ifnum\thepage>1
+    \vspace{0.2cm}
+    \hspace{0.5cm}
+    \footnotesize
+    \insertshorttitle
+    \ifx\insertsection\empty\else\quad---\quad\insertsection\fi
+    \hfill
+    \insertframenumber/\inserttotalframenumber
+    \hspace{0.5cm}
+    \vspace{0.15cm}
+    \hrule height 0.4pt
+    \fi
+}
+
+% Clean empty footline
+\setbeamertemplate{footline}{}
+
+% Bullet points: clean black circles
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[default]
 
 % ------------------------------------------------------------------------------
 % Required Packages
@@ -55,17 +70,14 @@
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
 \usepackage{tabularx}
-\usepackage{colortbl}
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta, positioning, calc}
 
 % ------------------------------------------------------------------------------
 % Metadata
 % ------------------------------------------------------------------------------
 \title[Electronics Workshop Module]{\textbf{\Large Electronics Workshop Module}}
-\subtitle{\large Laboratory Safety Protocols \& Electronic Components}
+\subtitle{Laboratory Safety Protocols \& Electronic Components}
 \author[Ateneo CoES]{\textbf{Ateneo Computer Engineering Society}}
-\institute[ADNU]{Department of Computer Engineering}
+\institute[ADNU]{Department of Computer Engineering\\College of Science, Engineering, and Architecture\\Ateneo de Naga University}
 \date{Academic Year 2026--2027}
 
 % ------------------------------------------------------------------------------
